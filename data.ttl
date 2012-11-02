@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://myapp.com/codes/#FISH>
+  skos:prefLabel "Fish" ;
+  skos:altLabel "Shark" .
+
+<http://myapp.com/codes/#CASE_NIGHTMARE_GREEN>
+  skos:prefLabel "Case Nightmare Green" ;
+  skos:altLabel "Uh oh" ;
+  skos:altLabel "The end of the world" .
+

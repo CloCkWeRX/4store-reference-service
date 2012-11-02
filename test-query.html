@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><title>SPARQL httpd test query</title></head>
+<body><h1>SPARQL httpd server v1.1.4 test query</h1>
+<h2>KB reference_store</h2>
+<form action="http://127.0.0.1:8000/sparql/" method="get">
+<textarea name="query" cols="80" rows="18">
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?s ?label 
+WHERE {
+ { ?s skos:prefLabel ?label . } UNION { ?s skos:altLabel ?label . }
+} 
+
+LIMIT 100
+</textarea><br>
+<em>Soft limit</em> <input type="text" name="soft-limit">
+<select name="output">
+  <option>text</option>
+  <option>xml</option>
+  <option>json</option>
+  <option>csv</option>
+</select>
+<input type="submit" value="Execute"><input type="reset">
+</form>
+</body></html>
